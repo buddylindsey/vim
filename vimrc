@@ -14,10 +14,12 @@ set fileformats=unix,mac,dos
 set cursorline
 set scrolloff=3
 set showcmd
-colorscheme molokai 
 
 " sets syntax highlighting and color shceme
 syntax on			" syntax highlighting on
+
+set background=dark
+colorscheme solarized 
 
 " status line
 set statusline=%F%m-%r[%L][%p%%][%{&ff}]%y[%l,%v]
