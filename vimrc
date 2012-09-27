@@ -53,3 +53,28 @@ map <Leader>e :e ~/.vimrc<cr>
 " yankring bindings
 nnoremap <silent> <F11> :YRShow<CR>
 map <Leader>y :YRShow<cr> " allow ,y to open yankring
+
+" ctrP fuzzy finder
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" bindings are left-to-right on keyboard:
+" (in no way are these mnemonic, sorry)
+" r = recent files
+" t = files in current project
+" T = tags in current buffer
+" y = open buffers
+let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_custom_ignore = '\v\~$|\.(o|exe|dll|bak|orig|swp|jpg|png|gif)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|vendor/|_site|node_modules|^tmp'
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtSelectMove("j")': ['<c-n>', '<c-j>', '<down>'],
+  \ 'PrtSelectMove("k")': ['<c-p>', '<c-k>', '<up>'],
+  \ 'PrtHistory(-1)': ['<c-h>'],
+  \ 'PrtHistory(1)': ['<c-l>'],
+  \ 'PrtCurLeft()': ['<left>', '<c-^>'],
+  \ 'PrtCurRight()': ['<right>'],
+  \ }
+nnoremap <silent> <Leader>y :CtrlPBuffer<CR>
+nnoremap <silent> <Leader>T :CtrlPBufTag<CR>
+nnoremap <silent> <Leader>r :CtrlPMRU<CR>
