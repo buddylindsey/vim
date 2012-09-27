@@ -53,15 +53,3 @@ map <Leader>e :e ~/.vimrc<cr>
 " yankring bindings
 nnoremap <silent> <F11> :YRShow<CR>
 map <Leader>y :YRShow<cr> " allow ,y to open yankring
-
-" fuzzy finder
-let g:fuf_modesDisable = []
-let g:fuf_coveragefile_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|jpg|png|gif)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])|vendor'
-nnoremap <silent> <Leader>t :FufCoverageFile<CR>
-nnoremap <silent> <Leader>T :FufBufferTagAll<CR>
-"nnoremap <silent> <Leader>y :FufBuffer<CR>
-nnoremap <silent> <Leader>r :FufMruFile<CR>
-nnoremap <silent> <Leader>: :FufMruCmd<CR>
-nnoremap <silent> <Leader>m :FufChangeList<CR>
-nnoremap <silent> <C-\> :FufBufferTagAllWithCursorWord!<CR>
-vnoremap <silent> <C-\> :FufBufferTagAllWithSelectedText!<CR> 
