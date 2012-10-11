@@ -19,7 +19,7 @@ set showcmd
 syntax on			" syntax highlighting on
 
 set background=dark
-colorscheme solarized 
+colorscheme solarized
 
 " status line
 set statusline=%F%m-%r[%L][%p%%][%{&ff}]%y[%l,%v]
@@ -52,7 +52,7 @@ map <Leader>e :e ~/.vimrc<cr>
 
 " yankring bindings
 nnoremap <silent> <F11> :YRShow<CR>
-map <Leader>y :YRShow<cr> " allow ,y to open yankring
+map <Leader>; :YRShow<cr> " allow ,y to open yankring
 
 " ctrP fuzzy finder
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -78,3 +78,5 @@ let g:ctrlp_prompt_mappings = {
 nnoremap <silent> <Leader>y :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>T :CtrlPBufTag<CR>
 nnoremap <silent> <Leader>r :CtrlPMRU<CR>
+
+nnoremap <silent> <Leader>C :CtrlPChangeAll<CR>
