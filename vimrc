@@ -1,3 +1,5 @@
+execute pathogen#infect()
+
 let mapleader = ","
 let maplocalleader = "\\"
 
@@ -7,7 +9,7 @@ set ruler                     " Show the cursor position all the time
 set title                     " Show title in console title bar
 set hid                       " Change buffer without saving
 set showmatch                 " Show matching bracets
-set number		" show line numbers
+set number   " show line numbers
 set directory=~/.vim/swapfiles
 set backspace=indent,eol,start
 set fileformats=unix,mac,dos
@@ -16,10 +18,10 @@ set scrolloff=3
 set showcmd
 
 " sets syntax highlighting and color shceme
-syntax on			" syntax highlighting on
+syntax on " syntax highlighting on
 
 set background=dark
-colorscheme solarized
+colorscheme neverland
 
 " status line
 set statusline=%F%m-%r[%L][%p%%][%{&ff}]%y[%l,%v]
@@ -38,6 +40,17 @@ set smarttab
 autocmd FileType python set shiftwidth=4 
 autocmd FileType python set softtabstop=4
 autocmd FileType python set tabstop=8 
+
+" PHP
+autocmd FileType php set shiftwidth=4 
+autocmd FileType php set softtabstop=4
+autocmd FileType php set tabstop=4
+autocmd FileType php set noexpandtab
+autocmd FileType php set noeol
+autocmd FileType php set binary
+
+set list
+set listchars=tab:.\ ,extends:>,precedes:<,trail:·
 
 " Turns off top bar in macvim
 if has("gui_running")
