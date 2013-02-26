@@ -49,6 +49,8 @@ autocmd FileType php set noexpandtab
 autocmd FileType php set noeol
 autocmd FileType php set binary
 
+autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 set list
 set listchars=tab:.\ ,extends:>,precedes:<,trail:·
 
@@ -72,4 +74,3 @@ nnoremap <silent> <F11> :YRShow<CR>
 map <Leader>; :YRShow<cr> " allow ,y to open yankring
 let g:yankring_history_dir = '~/.vim/artifacts/'
 let g:yankring_history_file = 'yankring_history.txt'
-
