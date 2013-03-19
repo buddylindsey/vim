@@ -37,12 +37,12 @@ set autoindent
 set smarttab
 
 " Python
-autocmd FileType python set shiftwidth=4 
+autocmd FileType python set shiftwidth=4
 autocmd FileType python set softtabstop=4
-autocmd FileType python set tabstop=8 
+autocmd FileType python set tabstop=8
 
 " PHP
-autocmd FileType php set shiftwidth=4 
+autocmd FileType php set shiftwidth=4
 autocmd FileType php set softtabstop=4
 autocmd FileType php set tabstop=4
 autocmd FileType php set noexpandtab
@@ -72,5 +72,5 @@ map <Leader>e :e ~/.vimrc<cr>
 " yankring bindings
 nnoremap <silent> <F11> :YRShow<CR>
 map <Leader>; :YRShow<cr> " allow ,y to open yankring
-let g:yankring_history_dir = '~/.vim/artifacts/'
+let g:yankring_history_dir = '~/.vim/artifacts'
 let g:yankring_history_file = 'yankring_history.txt'

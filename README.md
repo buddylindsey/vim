@@ -2,8 +2,16 @@
 
 ## Installation
 
-To use the vim files do the following:
+### Create a new Configuration
+~~~ bash
+$ cd ~/
+$ git clone https://github.com/buddylindsey/vim.git .vim
+$ ln -s .vim/vimrc .vimrc
+~~~
 
-    $ cd ~/
-    $ git clone https://github.com/buddylindsey/vim.git .vim
-    $ ln -s .vim/vimrc .vimrc
+### Overwriting Exisitng Configuration
+~~~ bash
+$ cd ~/ && rm -rf .vim && rm .vimrc
+$ git clone https://github.com/buddylindsey/vim.git .vim
+$ ln -s .vim/vimrc .vimrc
+~~~
