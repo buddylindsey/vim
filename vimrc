@@ -16,6 +16,7 @@ set fileformats=unix,mac,dos
 set cursorline
 set scrolloff=3
 set showcmd
+set term=screen-256color
 
 " sets syntax highlighting and color shceme
 syntax on " syntax highlighting on
