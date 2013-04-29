@@ -55,6 +55,22 @@ autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 set list
 set listchars=tab:.\ ,extends:>,precedes:<,trail:·
 
+" vimwiki
+"nmap <Leader>ii <Plug>VimwikiIndex
+"nmap <Leader>it <Plug>VimwikiTabIndex
+"nmap <Leader>is <Plug>VimwikiUISelect
+"nmap <Leader>id <Plug>VimwikiDiaryIndex
+"nmap <Leader>i<Leader>i <Plug>VimwikiDiaryGenerateLinks
+"nmap <Leader>i<Leader>w <Plug>VimwikiMakeDiaryNote
+"nmap <Leader>i<Leader>t <Plug>VimwikiTabMakeDiaryNote
+"nmap <buffer> <Leader>ihh <Plug>Vimwiki2HTMLBrowse
+"nmap <buffer> <Leader>ih <Plug>Vimwiki2HTML
+"nmap <silent><buffer> <Leader>ir <Plug>VimwikiRenameLink
+"nmap <silent><buffer> <Leader>id <Plug>VimwikiDeleteLink
+"let wiki = {}
+"let wiki.nested_syntaxes = {'cs': 'coffee'}
+"let g:vimwiki_list = [wiki]
+
 " Turns off top bar in macvim
 if has("gui_running")
   set guioptions=egmrt
