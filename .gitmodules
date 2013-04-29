@@ -4,3 +4,6 @@
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = git://github.com/vim-scripts/vimwiki.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
