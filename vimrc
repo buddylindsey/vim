@@ -17,6 +17,8 @@ set cursorline
 set scrolloff=3
 set showcmd
 set term=screen-256color
+set pastetoggle=<F3>
+set incsearch
 
 " sets syntax highlighting and color shceme
 syntax on " syntax highlighting on
