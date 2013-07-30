@@ -93,3 +93,6 @@ nnoremap <silent> <F11> :YRShow<CR>
 map <Leader>; :YRShow<cr> " allow ,y to open yankring
 let g:yankring_history_dir = '~/.vim/artifacts'
 let g:yankring_history_file = 'yankring_history.txt'
+
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
