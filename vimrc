@@ -10,6 +10,7 @@ set title                     " Show title in console title bar
 set hid                       " Change buffer without saving
 set showmatch                 " Show matching bracets
 set number   " show line numbers
+set relativenumber
 set directory=~/.vim/swapfiles
 set backspace=indent,eol,start
 set fileformats=unix,mac,dos
@@ -96,3 +97,46 @@ let g:yankring_history_file = 'yankring_history.txt'
 
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
+
+" Python checking
+function ToolGrep(tool)
+  set lazyredraw
+  " Close any existing cwindows.
+  cclose
+  let l:grepformat_save = &grepformat
+  let l:grepprogram_save = &grepprg
+  set grepformat&vim
+  set grepformat&vim
+  let &grepformat = '%f:%l:%m'
+  if a:tool == "pylint"
+    let &grepprg = 'pylint --output-format=parseable --reports=n'
+  elseif a:tool == "pyflakes"
+    let &grepprg = 'pyflakes'
+  elseif a:tool == "pychecker"
+    let &grepprg = 'pychecker --quiet -q'
+  elseif a:tool == "pep8"
+    let &grepprg = 'pep8 -r'
+  elseif a:tool == "flake8"
+    let &grepprg = 'flake8'
+  else
+    echohl WarningMsg
+    echo "ToolGrep Error: Unknown Tool"
+    echohl none
+  endif
+  if &readonly == 0 | update | endif
+  silent! grep! %
+  let &grepformat = l:grepformat_save
+  let &grepprg = l:grepprogram_save
+  let l:mod_total = 0
+  let l:win_count = 1
+  " Determine correct window height
+  windo let l:win_count = l:win_count + 1
+  if l:win_count <= 2 | let l:win_count = 4 | endif
+  windo let l:mod_total = l:mod_total + winheight(0)/l:win_count |
+        \ execute 'resize +'.l:mod_total
+  " Open cwindow
+  execute 'belowright copen '.l:mod_total
+  nnoremap <buffer> <silent> c :cclose<CR>
+  set nolazyredraw
+  redraw!
+endfunction
