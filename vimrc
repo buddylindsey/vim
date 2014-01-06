@@ -28,7 +28,7 @@ set background=dark
 colorscheme neverland
 
 " status line
-set statusline=%F%m-%r[%L][%p%%][%{&ff}]%y[%l,%v]
+set statusline=%{fugitive#statusline()}%F%m-%r[%L][%p%%][%{&ff}]%y[%l,%v]
 
 " Indentation
 filetype plugin indent on
@@ -58,6 +58,17 @@ autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 set list
 set listchars=tab:.\ ,extends:>,precedes:<,trail:·
 
+" Buddy Remapping
+noremap <silent> <C-s> :update<CR>
+vnoremap <silent> <C-s> <C-C>:udpate<CR>
+inoremap <silent> <C-s> <C-O>:update<CR>
+
+" --Keyboard mappings--
+" vim file specific
+map <Leader>v :sp ~/.vimrc<cr> " edit my .vimrc file in a split
+map <Leader>u :source ~/.vimrc<cr>
+map <Leader>e :e ~/.vimrc<cr>
+
 " vimwiki
 "nmap <Leader>ii <Plug>VimwikiIndex
 "nmap <Leader>it <Plug>VimwikiTabIndex
@@ -82,12 +93,6 @@ endif
 " [p]roject drawer
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.sock$']
-
-" --Keyboard mappings--
-" vim file specific
-map <Leader>v :sp ~/.vimrc<cr> " edit my .vimrc file in a split
-map <Leader>u :source ~/.vimrc<cr>
-map <Leader>e :e ~/.vimrc<cr>
 
 " yankring bindings
 nnoremap <silent> <F11> :YRShow<CR>
