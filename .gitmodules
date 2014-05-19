@@ -28,9 +28,6 @@
 [submodule "bundle/vim-stylus"]
 	path = bundle/vim-stylus
 	url = https://github.com/wavded/vim-stylus.git
-[submodule "bundle/vim-autotag"]
-	path = bundle/vim-autotag
-	url = https://github.com/craigemery/vim-autotag.git
 [submodule "bundle/salt-vim"]
 	path = bundle/salt-vim
 	url = https://github.com/saltstack/salt-vim.git
