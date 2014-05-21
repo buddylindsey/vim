@@ -145,3 +145,10 @@ function ToolGrep(tool)
   set nolazyredraw
   redraw!
 endfunction
+
+" snipmate configuration
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['python'] = 'python,django,cbv'
+let g:snipMate.scope_aliases['html'] = 'html,htmldjango'
+let g:snipMate.scope_aliases['jinja'] = 'html,htmldjango'

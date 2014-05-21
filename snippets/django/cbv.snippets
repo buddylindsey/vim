@@ -1,0 +1,27 @@
+snippet templateview
+	class ${1:ClassName}View(TemplateView):
+	    template_name = ${2:template_name}
+
+snippet formview
+	class ${1:ClassName}View(FormView):
+		template_name = ${2:template_name}
+		form_class = ${3:form_class}
+		success_url = reverse_lazy('${4:url_name}')
+
+		def form_valid(self, form):
+			pass
+
+		def form_invalid(self, form):
+			pass
+
+snippet mixin
+	class ${1:ClassName}Mixin(object):
+	    pass
+
+snippet createview
+	class ${1:ClassName}View(CreateView):
+	    pass
+
+snippet updateview
+	class ${1:ClassName}View(UpdateView):
+	    pass
