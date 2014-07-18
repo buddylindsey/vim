@@ -1,7 +1,6 @@
 snippet templateview
 	class ${1:ClassName}View(TemplateView):
 	    template_name = ${2:template_name}
-
 snippet formview
 	class ${1:ClassName}View(FormView):
 		template_name = ${2:template_name}
@@ -13,7 +12,16 @@ snippet formview
 
 		def form_invalid(self, form):
 			pass
-
+snippet listview
+	class ${1:ClassName}View(ListView):
+	    template_name = ${2:template_name}
+		model = ${3:model}
+		context_object_name = '${4:name}'
+snippet detailview
+	class ${1:ClassName}View(DetailView):
+	    template_name = ${2:template_name}
+		model = ${3:model}
+		context_object_name = '${4:name}'
 snippet mixin
 	class ${1:ClassName}Mixin(object):
 	    pass
@@ -30,3 +38,15 @@ snippet get_context_data
 	def get_context_data(self, **kwargs):
 	    context = super(${1:ClassName}, self).get_context_data(**kwargs)
 		return context
+snippet get_queryset
+	def get_queryset(self):
+	    return ${1:ClassName}.objects.all()
+snippet get_success_url
+	def get_success_url(self):
+	    return self.sucess_url
+snippet cbvpost
+	def post(self, request, args*, **kwargs):
+	    return super(${1:ClassName}, self).post(args, kwargs)
+snippet cbvget
+	def get(self, request, args*, **kwargs):
+	    return super(${1:ClassName}, self).get(args, kwargs)
