@@ -53,6 +53,9 @@ autocmd FileType php set noexpandtab
 autocmd FileType php set noeol
 autocmd FileType php set binary
 
+" Stylus
+autocmd BufNewFile,BufReadPost *.styl set filetype=stylus
+
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 set list
