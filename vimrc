@@ -56,7 +56,11 @@ autocmd FileType php set binary
 " Stylus
 autocmd BufNewFile,BufReadPost *.styl set filetype=stylus
 
+" C-lang dervitives
 autocmd FileType c,cpp,java,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Markdown
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 set list
 set listchars=tab:.\ ,extends:>,precedes:<,trail:·
@@ -80,13 +84,18 @@ map <Leader>e :e ~/.vimrc<cr>
 "nmap <Leader>i<Leader>i <Plug>VimwikiDiaryGenerateLinks
 "nmap <Leader>i<Leader>w <Plug>VimwikiMakeDiaryNote
 "nmap <Leader>i<Leader>t <Plug>VimwikiTabMakeDiaryNote
-"nmap <buffer> <Leader>ihh <Plug>Vimwiki2HTMLBrowse
-"nmap <buffer> <Leader>ih <Plug>Vimwiki2HTML
+nmap <buffer> <Leader>whh <Plug>Vimwiki2HTMLBrowse
+nmap <buffer> <Leader>wh <Plug>Vimwiki2HTML
 "nmap <silent><buffer> <Leader>ir <Plug>VimwikiRenameLink
 "nmap <silent><buffer> <Leader>id <Plug>VimwikiDeleteLink
-"let wiki = {}
-"let wiki.nested_syntaxes = {'cs': 'coffee'}
-"let g:vimwiki_list = [wiki]
+let wiki = {}
+let wiki.nested_syntaxes = {'cs': 'coffee', 'css': 'css', 'python': 'python', 'sh': 'bash'}
+let wiki.path = '/home/buddy/Dropbox/vimwiki/'
+let wiki.path_html = '/home/buddy/Dropbox/vimwiki/public_html/'
+let wiki.template_path = '/home/buddy/Dropbox/vimwiki/public_html/templates/'
+let wiki.template_default = 'base'
+let wiki.template_ext = '.html'
+let g:vimwiki_list = [wiki]
 
 " Turns off top bar in macvim
 if has("gui_running")
@@ -95,7 +104,7 @@ endif
 
 " [p]roject drawer
 nnoremap <silent> <Leader>p :NERDTreeToggle<CR>
-let NERDTreeIgnore = ['\.pyc$', '\.sock$']
+let NERDTreeIgnore = ['\.pyc$', '\.sock$', '__pycache__']
 
 " yankring bindings
 nnoremap <silent> <F11> :YRShow<CR>
@@ -162,3 +171,9 @@ let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['python'] = 'python,django,cbv'
 let g:snipMate.scope_aliases['html'] = 'html,htmldjango'
 let g:snipMate.scope_aliases['jinja'] = 'html,htmldjango'
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" git-gutter
+let g:gitgutter_max_signs = 750
