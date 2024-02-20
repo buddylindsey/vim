@@ -66,3 +66,10 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
     }),
 })
+
+-- <Ctrl-y>: Confirms selection.
+-- <Ctrl-e>: Cancel the completion.
+-- <Down>: Navigate to the next item on the list.
+-- <Up>: Navigate to previous item on the list.
+-- <Ctrl-n>: Go to the next item in the completion menu, or trigger completion menu.
+-- <Ctrl-p>: Go to the previous item in the completion menu, or trigger completion menu.
