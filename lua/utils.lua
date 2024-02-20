@@ -6,9 +6,9 @@ function M.check_app_exist(command, text)
     handle:close()
 
     if result ~= nil and result:find(text) then
-	return true
+        return true
     else
-	return false
+        return false
     end
 end
 
