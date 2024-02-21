@@ -45,7 +45,8 @@ local plugins = {
     { "L3MON4D3/LuaSnip" },
     { "rafamadriz/friendly-snippets" },
     { "morhetz/gruvbox" },
-    { "lewis6991/gitsigns.nvim" }
+    { "lewis6991/gitsigns.nvim" },
+    { "tpope/vim-fugitive" },
 }
 
 require("lazy").setup(plugins)
