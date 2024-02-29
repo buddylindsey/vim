@@ -4,8 +4,6 @@ if not status_ok then
     return
 end
 
-
-
 require('nvim-treesitter.configs').setup({
     ensure_installed = {
         "c",

@@ -52,6 +52,7 @@ local plugins = {
     { "morhetz/gruvbox" },
     { "lewis6991/gitsigns.nvim" },
     { "tpope/vim-fugitive" },
+    { "sbdchd/neoformat" },
 }
 
 require("lazy").setup(plugins)

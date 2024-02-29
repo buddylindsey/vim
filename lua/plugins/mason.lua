@@ -72,7 +72,7 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<C-j>"] = cmp.mapping.select_next_item(cmp_select),
         ["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
@@ -86,7 +86,8 @@ cmp.setup({
 })
 
 -- Set up lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local client_capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').default_capabilities(client_capabilities)
 for _, server in ipairs(ensure_installed) do
     require('lspconfig')[server].setup({
         capabilities = capabilities
