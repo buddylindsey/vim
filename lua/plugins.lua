@@ -53,6 +53,7 @@ local plugins = {
     { "lewis6991/gitsigns.nvim" },
     { "tpope/vim-fugitive" },
     { "sbdchd/neoformat" },
+    { "tpope/vim-fugitive" },
 }
 
 require("lazy").setup(plugins)
