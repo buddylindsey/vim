@@ -5,18 +5,32 @@ if not status_ok then
 end
 
 
+
 require('nvim-treesitter.configs').setup({
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "rust", "html", "javascript", "json" },
+    ensure_installed = {
+        "c",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "python",
+        "rust",
+        "sql",
+--        "terraform",
+        "toml",
+        "vim",
+--        "vimdoc",
+    },
     highlight = {
         enable = true,
     },
     indent = {
         enable = true,
     },
-        autotag = {
+    autotag = {
         enable = true,
     },
-        context_commentstring = {
+    context_commentstring = {
         enable = true,
     },
 })
