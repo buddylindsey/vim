@@ -54,6 +54,7 @@ local plugins = {
     { "tpope/vim-fugitive" },
     { "sbdchd/neoformat" },
     { "tpope/vim-fugitive" },
+    { "tpope/vim-commentary" },
 }
 
 require("lazy").setup(plugins)
