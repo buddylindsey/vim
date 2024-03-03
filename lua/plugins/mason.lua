@@ -39,6 +39,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
         local opts = { buffer = ev.buf }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+        vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, opts)
+        vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, opts)
+        vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
@@ -49,6 +52,35 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     end,
+})
+
+local wk = require('which-key')
+wk.register({
+    g = {
+        name = "Go to",
+        d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
+        D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
+        r = { "<cmd>lua vim.lsp.buf.references()<CR>", "References" },
+        i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
+    },
+    K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
+    ["<leader>"] = {
+        v = {
+            name = "LSP",
+            d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open Diagnostics" },
+            c = {
+                name="Code Action",
+                a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" }
+            },
+            r = {
+                r = { "<cmd>lua vim.lsp.buf.references()<CR>", "References" },
+                n = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+            },
+            w = {
+                s = { "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", "Workspace Symbols" },
+            },
+        }
+    }
 })
 
 local cmp = require('cmp')
