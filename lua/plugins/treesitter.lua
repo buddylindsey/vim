@@ -32,3 +32,12 @@ require('nvim-treesitter.configs').setup({
         enable = true,
     },
 })
+
+vim.api.nvim_create_autocmd("BufRead", {
+    pattern = "*.hcl", -- Matches all files, but you can narrow this down
+    callback = function()
+        if vim.fn.expand("%:t") == "terragrunt.hcl" then
+            vim.bo.filetype = "terraform"
+        end
+    end,
+})
