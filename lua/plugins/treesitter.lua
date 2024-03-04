@@ -14,10 +14,10 @@ require('nvim-treesitter.configs').setup({
         "python",
         "rust",
         "sql",
---        "terraform",
+        "terraform",
         "toml",
         "vim",
---        "vimdoc",
+        "vimdoc",
     },
     highlight = {
         enable = true,
