@@ -15,23 +15,6 @@ require("fidget").setup({})
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = ensure_installed,
-    handlers = {
-        function (server_name)
-            require("lspconfig")[server_name].setup({})
-        end,
-        ["lua_ls"] = function ()
-            local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup {
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { "vim" }
-                        }
-                    }
-                }
-            }
-        end,
-    }
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -120,10 +103,36 @@ cmp.setup({
 -- Set up lspconfig.
 local client_capabilities = vim.lsp.protocol.make_client_capabilities()
 local capabilities = require('cmp_nvim_lsp').default_capabilities(client_capabilities)
+
+local lua_langauge_support = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      },
+      diagnostics = {
+        globals = {'vim'},
+      },
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      telemetry = {
+        enable = false,
+      },
+    },
+}
+
 for _, server in ipairs(ensure_installed) do
-    require('lspconfig')[server].setup({
-        capabilities = capabilities
-    })
+    if server == 'lua_ls' then
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
+        require('lspconfig')['lua_ls'].setup({
+            capabilities = capabilities,
+            settings = lua_langauge_support
+        })
+    else
+        require('lspconfig')[server].setup({
+            capabilities = capabilities
+        })
+    end
 end
 
 vim.diagnostic.config({
@@ -137,3 +146,4 @@ vim.diagnostic.config({
         prefix = ""
     }
 })
+
