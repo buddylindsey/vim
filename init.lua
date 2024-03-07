@@ -15,3 +15,11 @@ require("plugins.mason")
 require("plugins.gitsigns")
 require("plugins.neoformat")
 require("plugins.oil")
+
+
+
+-- Install the following packages to use silicon on Ubuntu
+-- sudo apt install libfontconfig-dev libxcb-composite0-dev libharfbuzz-dev
+-- cargo install silicon
+-- https://github.com/googlefonts/noto-emoji
+-- https://www.nerdfonts.com/font-downloads - JetBrainsMono Nerd Font
