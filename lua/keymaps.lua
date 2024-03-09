@@ -14,6 +14,9 @@ vim.g.mapleader = ","
 vim.g.maplocalleader = ","
 
 keymap("n", "<leader>cs", ":noh<CR>", opts)
+keymap("n", "<leader>tn", ":tabn<CR>", opts)
+keymap("n", "<leader>tp", ":tabp<CR>", opts)
+keymap("n", "<leader>tc", ":tabe<CR>", opts)
 
 vim.keymap.set('n', '<leader>o', function()
     vim.cmd('OpenFloatCmd Oil')

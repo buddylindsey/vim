@@ -18,8 +18,12 @@ require("plugins.oil")
 
 
 
--- Install the following packages to use silicon on Ubuntu
+-- Get silicon to work with neovim
+-- Ubuntu/PopOS:
 -- sudo apt install libfontconfig-dev libxcb-composite0-dev libharfbuzz-dev
 -- cargo install silicon
+-- MacOS:
+-- brew install silicon
+-- Fonts:
 -- https://github.com/googlefonts/noto-emoji
 -- https://www.nerdfonts.com/font-downloads - JetBrainsMono Nerd Font

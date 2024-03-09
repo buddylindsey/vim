@@ -92,6 +92,9 @@ local plugins = {
                 window_title = function()
                     return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ":t")
                 end,
+                output = function()
+                    return "~/Downloads/" .. os.date("!%Y-%m-%dT%H-%M-%S") .. "_code.png"
+                end,
             })
         end
     },

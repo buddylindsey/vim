@@ -13,7 +13,7 @@ function M.check_app_exist(command, text)
 end
 
 -- Add window for random commands
-function open_command_in_float(cmd)
+function M.open_command_in_float(cmd)
     -- Calculate the floating window size and position
     local width = math.floor(vim.o.columns * 0.6)
     local height = math.floor(vim.o.lines * 0.6)
