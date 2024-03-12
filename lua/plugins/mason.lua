@@ -8,7 +8,8 @@ local ensure_installed = {
     'cssls',
     'bashls',
     'terraformls',
-    'dockerls'
+    'dockerls',
+    'pyright',
 }
 
 require("fidget").setup({})
