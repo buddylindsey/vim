@@ -1,4 +1,5 @@
 -- Needed before doing anything with plugins
+require("plugins.vimwiki") -- vimwiki needs to be loaded before plugins
 require("plugins")
 
 -- Required files for vim settings

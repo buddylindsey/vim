@@ -98,6 +98,7 @@ local plugins = {
             })
         end
     },
+    { "vimwiki/vimwiki" },
 }
 
 require("lazy").setup(plugins)
