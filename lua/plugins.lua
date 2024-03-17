@@ -15,7 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     'sainnhe/sonokai',
-    'lewis6991/gitsigns.nvim',
     'nvim-lua/plenary.nvim',
     {
         'nvim-telescope/telescope.nvim',
@@ -51,9 +50,17 @@ local plugins = {
     { "rafamadriz/friendly-snippets" },
     { "morhetz/gruvbox" },
     { "lewis6991/gitsigns.nvim" },
-    { "tpope/vim-fugitive" },
+    {
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim",         -- required
+            "sindrets/diffview.nvim",        -- optional - Diff integration
+            -- Only one of these is needed, not both.
+            "nvim-telescope/telescope.nvim", -- optional
+        },
+        config = true
+    },
     { "sbdchd/neoformat" },
-    { "tpope/vim-fugitive" },
     { "tpope/vim-commentary" },
     {
         "folke/which-key.nvim",
