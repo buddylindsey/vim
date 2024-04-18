@@ -17,6 +17,7 @@ require("plugins.gitsigns")
 require("plugins.neoformat")
 require("plugins.oil")
 require("plugins.neogit")
+require("plugins.qod")
 
 
 
