@@ -9,6 +9,10 @@ vim.api.nvim_create_user_command('OpenFloatTerm', function(input)
     utils.open_terminal_command_in_float(input.args)
 end, {nargs = 1})
 
+vim.api.nvim_create_user_command('Yazi', function(input)
+    utils.open_terminal_command_in_float(input.args)
+end, {nargs = 1})
+
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
@@ -29,6 +33,9 @@ vim.keymap.set('n', '<leader>g', function()
     vim.cmd('OpenFloatTerm lazygit')
 end, {noremap = true, silent = true, desc = "Open Oil in a floating window"})
 
+vim.keymap.set('n', '<leader>m', function()
+    vim.cmd('OpenFloatTerm yazi')
+end, {noremap = true, silent = true, desc = "Open Yazi file manager"})
 
 local function pyFmt()
     if vim.bo.filetype == "python" then
