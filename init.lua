@@ -15,9 +15,8 @@ require("plugins.lualine")
 require("plugins.mason")
 require("plugins.gitsigns")
 require("plugins.neoformat")
-require("plugins.oil")
-require("plugins.neogit")
 require("plugins.qod")
+require("plugins.githublink")
 
 
 

@@ -50,16 +50,6 @@ local plugins = {
     { "rafamadriz/friendly-snippets" },
     { "morhetz/gruvbox" },
     { "lewis6991/gitsigns.nvim" },
-    {
-        "NeogitOrg/neogit",
-        dependencies = {
-            "nvim-lua/plenary.nvim",         -- required
-            "sindrets/diffview.nvim",        -- optional - Diff integration
-            -- Only one of these is needed, not both.
-            "nvim-telescope/telescope.nvim", -- optional
-        },
-        config = true
-    },
     { "sbdchd/neoformat" },
     { "tpope/vim-commentary" },
     {
@@ -74,12 +64,6 @@ local plugins = {
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
         }
-    },
-    {
-        'stevearc/oil.nvim',
-        opts = {},
-        -- Optional dependencies
-        dependencies = { "nvim-tree/nvim-web-devicons" },
     },
     {
         "michaelrommel/nvim-silicon",

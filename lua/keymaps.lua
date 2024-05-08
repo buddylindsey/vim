@@ -37,3 +37,5 @@ local function pyFmt()
 end
 
 vim.api.nvim_create_user_command('Pyfmt', pyFmt, {nargs = 0})
+
+vim.api.nvim_set_keymap('n', '<leader>ogh', ':OpenGitHubLine<CR>', { noremap = true, silent = true })
