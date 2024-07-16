@@ -18,6 +18,8 @@ require('nvim-treesitter.configs').setup({
         "toml",
         "vim",
         "vimdoc",
+        "markdown",
+        "markdown_inline"
     },
     highlight = {
         enable = true,
