@@ -14,17 +14,14 @@ keymap.set('n', '<leader>fh', builtin.help_tags, {})
 keymap.set('n', '<leader>fm', builtin.marks, {})
 
 local wk = require('which-key')
-wk.register({
-  f = {
-    name = "Find",
-    f = {builtin.find_files, "Find Files"},
-    g = {builtin.live_grep, "Grep"},
-    b = {builtin.buffers, "Buffers"},
-    h = {builtin.help_tags, "Help Tags"},
-    m = {builtin.marks, "Marks"},
-  }
+wk.add({
+  { "<leader>f", group = "Find" },
+  { "<leader>fb", builtin.buffers, desc = "Buffers" },
+  { "<leader>ff", builtin.find_files, desc = "Find Files" },
+  { "<leader>fg", builtin.live_grep, desc = "Grep" },
+  { "<leader>fh", builtin.help_tag, desc = "Help Tags" },
+  { "<leader>fm", builtin.marks, desc = "Marks" },
 }, { prefix = "<leader>" })
-
 
 function check_ripgrep()
   local handle = io.popen("rg --version")

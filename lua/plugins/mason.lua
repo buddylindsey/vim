@@ -39,32 +39,30 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 local wk = require('which-key')
-wk.register({
-    g = {
-        name = "Go to",
-        d = { "<cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-        D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
-        r = { "<cmd>lua vim.lsp.buf.references()<CR>", "References" },
-        i = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Implementation" },
-    },
-    K = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Hover" },
-    ["<leader>"] = {
-        v = {
-            name = "LSP",
-            d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Open Diagnostics" },
-            c = {
-                name="Code Action",
-                a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" }
-            },
-            r = {
-                r = { "<cmd>lua vim.lsp.buf.references()<CR>", "References" },
-                n = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-            },
-            w = {
-                s = { "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", "Workspace Symbols" },
-            },
-        }
-    }
+
+wk.add({
+  { "<leader>v", group = "LSP" },
+  { "<leader>vc", group = "Code Action" },
+  { "<leader>vca", "<cmd>lua vim.lsp.buf.code_action()<CR>", desc = "Code Action" },
+  { "<leader>vd", "<cmd>lua vim.diagnostic.open_float()<CR>", desc = "Open Diagnostics" },
+  { "<leader>vrn", "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
+  { "<leader>vrr", "<cmd>lua vim.lsp.buf.references()<CR>", desc = "References" },
+  { "<leader>vws", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", desc = "Workspace Symbols" },
+  { "K", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Hover" },
+  { "g", group = "Go to" },
+  { "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", desc = "Declaration" },
+  { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Definition" },
+  { "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", desc = "Implementation" },
+  { "gr", "<cmd>lua vim.lsp.buf.references()<CR>", desc = "References" },
+})
+
+wk.add({
+  { "K", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Hover" },
+  { "g", group = "Go to" },
+  { "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", desc = "Declaration" },
+  { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", desc = "Definition" },
+  { "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", desc = "Implementation" },
+  { "gr", "<cmd>lua vim.lsp.buf.references()<CR>", desc = "References" },
 })
 
 local cmp = require('cmp')

@@ -29,7 +29,7 @@ local plugins = {
     { "github/copilot.vim" },
     {
         'nvim-lualine/lualine.nvim',
-        dependencies = { 'nvim-tree/nvim-web-devicons' }
+        dependencies = { 'nvim-tree/nvim-web-devicons', 'echasnovski/mini.icons' }
     },
     {
         "neovim/nvim-lspconfig",
@@ -71,8 +71,8 @@ local plugins = {
         cmd = "Silicon",
         init = function()
             local wk = require("which-key")
-            wk.register({
-                ["<leader>sc"] = { ":Silicon<CR>", "Snapshot Code" },
+            wk.add({
+              { "<leader>sc", ":Silicon<CR>", desc = "Snapshot Code" },
             }, {mode = "n"})
         end,
         config = function()
