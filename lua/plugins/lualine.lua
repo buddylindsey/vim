@@ -19,7 +19,7 @@ lualine.setup {
     sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch", "diff", "diagnostics" },
-        lualine_c = { "filename", "searchcount" },
+        lualine_c = { {"filename", path=1}, "searchcount" },
         lualine_x = { "encoding", "fileformat", "filetype", "tabs" },
         lualine_y = { "progress" },
         lualine_z = { "location" },
