@@ -1,5 +1,5 @@
 local ensure_installed = {
-    'ts_ls',
+    'tsserver',
     'rust_analyzer',
     'ruff_lsp',
     'lua_ls',
