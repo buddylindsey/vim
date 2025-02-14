@@ -10,6 +10,7 @@ local ensure_installed = {
     'terraformls',
     'dockerls',
     'pyright',
+    'clangd',
 }
 
 require("fidget").setup({})
@@ -126,6 +127,13 @@ for _, server in ipairs(ensure_installed) do
         require('lspconfig')['lua_ls'].setup({
             capabilities = capabilities,
             settings = lua_langauge_support
+        })
+    elseif server == 'clangd' then
+        require('lspconfig')['clangd'].setup({
+            capabilities = capabilities,
+            cmd = { "clangd" },  -- Ensure clangd is used
+            filetypes = { "c", "cpp", "objc", "objcpp" },
+            root_dir = require("lspconfig.util").root_pattern("compile_commands.json", ".git"),
         })
     else
         require('lspconfig')[server].setup({
