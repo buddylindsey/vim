@@ -1,7 +1,6 @@
 local ensure_installed = {
     'ts_ls',
     'rust_analyzer',
-    'ruff_lsp',
     'lua_ls',
     'jsonls',
     'html',
@@ -11,6 +10,8 @@ local ensure_installed = {
     'dockerls',
     'pyright',
     'clangd',
+    'ruff',
+    'gopls',
 }
 
 require("fidget").setup({})
