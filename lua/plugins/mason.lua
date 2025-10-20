@@ -1,7 +1,7 @@
 local ensure_installed = {
     'ts_ls',
     'rust_analyzer',
-    'ruff_lsp',
+    'ruff',
     'lua_ls',
     'jsonls',
     'html',
@@ -10,6 +10,8 @@ local ensure_installed = {
     'terraformls',
     'dockerls',
     'pyright',
+    'golangci_lint_ls',
+    'gopls',
 }
 
 require("fidget").setup({})
